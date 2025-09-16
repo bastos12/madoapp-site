@@ -11,12 +11,12 @@ import React from "react";
  * The component is accessible, responsive and organized by sections with anchors.
  */
 
-export default function PrivacyPolicyMADO({ lastUpdated = "16 septembre 2025" }) {
+export default function PrivacyPolicyMado() {
   return (
     <article className="prose prose-lg mx-auto p-6 rounded-2xl shadow-sm mt-20 md:px-20">
       <header className="mb-4">
         <h1 className="text-2xl font-semibold">🛡️ Politique de Confidentialité – MADO</h1>
-        <p className="text-sm">Dernière mise à jour : <strong>{lastUpdated}</strong></p>
+        <p className="text-sm">Dernière mise à jour : <strong>{"16 septembre 2025"}</strong></p>
       </header>
 
       <nav aria-label="Table des matières" className="mb-6">

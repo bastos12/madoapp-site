@@ -1,8 +1,8 @@
-export default function CGUMADO({ version = "16 septembre 2025" }) {
+export default function CguMado() {
     return (
       <div className="p-6 space-y-6 mt-20 md:px-20">
         <h1 className="text-3xl font-bold mb-2">⚖️ Conditions Générales d’Utilisation – MADO</h1>
-        <p className="text-sm">Version du {version}</p>
+        <p className="text-sm">Version du {"16 septembre 2025"}</p>
   
         <section>
           <h2 className="text-xl font-semibold mb-2">1. Présentation de MADO</h2>

@@ -1,9 +1,9 @@
-export default function ChildProtectionMADO({ lastUpdated = "16 septembre 2025", contactEmail = "hello@madoapp.fr" }) {
+export default function ChildProtectionMado() {
   return (
     <article className="prose prose-lg mx-auto p-6 rounded-2xl shadow-sm mt-20 md:px-20">
       <header className="mb-4">
         <h1 className="text-2xl font-semibold">🔒 Engagement de MADO contre l’exploitation des mineurs et les abus sexuels</h1>
-        <p className="text-sm">Dernière mise à jour : <strong>{lastUpdated}</strong></p>
+        <p className="text-sm">Dernière mise à jour : <strong>{"16 septembre 2025"}</strong></p>
       </header>
 
       <section className="mb-4">
@@ -32,7 +32,7 @@ export default function ChildProtectionMADO({ lastUpdated = "16 septembre 2025",
 
       <section className="mb-4">
         <h2 className="text-xl font-medium">📩 Signaler un comportement suspect</h2>
-        <p>Si vous constatez un comportement ou un contenu inapproprié, vous pouvez nous contacter à : <a href={`mailto:${contactEmail}`} className="underline">{contactEmail}</a></p>
+        <p>Si vous constatez un comportement ou un contenu inapproprié, vous pouvez nous contacter à : <a href={`mailto:hello@madoapp.fr`} className="underline">{"hello@madoapp.fr"}</a></p>
       </section>
 
       <section className="mb-4">

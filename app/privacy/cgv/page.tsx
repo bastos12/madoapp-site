@@ -9,12 +9,12 @@ import React from "react";
  *    <CGVMADO lastUpdated="25/06/2025" contactEmail="hello@madoapp.fr" />
  */
 
-export default function CGVMADO({ lastUpdated = "16 septembre 2025", contactEmail = "hello@madoapp.fr" }) {
+export default function CgvMado() {
   return (
     <article className="prose prose-lg mx-auto p-6 rounded-2xl shadow-sm mt-20 md:px-20">
       <header className="mb-4">
         <h1 className="text-2xl font-semibold">🧾 Conditions Générales de Vente – MADO</h1>
-        <p className="text-sm">Dernière mise à jour : <strong>{lastUpdated}</strong></p>
+        <p className="text-sm">Dernière mise à jour : <strong>{"16 septembre 2025"}</strong></p>
       </header>
 
       <section className="mb-4" id="section-1">
@@ -93,7 +93,7 @@ export default function CGVMADO({ lastUpdated = "16 septembre 2025", contactEmai
 
       <section className="mb-4" id="section-8">
         <h2 className="text-xl font-medium">8. Réclamations et support</h2>
-        <p>Pour toute réclamation relative à un achat ou abonnement, contactez : <a href={`mailto:${contactEmail}`} className="underline">{contactEmail}</a></p>
+        <p>Pour toute réclamation relative à un achat ou abonnement, contactez : <a href={`mailto:hello@madoapp.fr`} className="underline">{"hello@madoapp.fr"}</a></p>
         <p>Les demandes liées aux paiements doivent être adressées en priorité à Apple ou Google selon la plateforme utilisée.</p>
       </section>
 
