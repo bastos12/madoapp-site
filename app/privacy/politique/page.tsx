@@ -91,7 +91,7 @@ export default function PrivacyPolicyMADO({ lastUpdated = "16 septembre 2025" })
         <h2 className="text-xl font-medium">5. Partage des données</h2>
         <p>Vos données peuvent être partagées avec :</p>
         <ul className="list-disc ml-5">
-          <li>D'autres membres (uniquement les informations que vous choisissez de partager publiquement ou en messagerie).</li>
+          <li>{"'D'autres membres (uniquement les informations que vous choisissez de partager publiquement ou en messagerie)."}</li>
           <li>Prestataires techniques et prestataires en charge de la sécurité.</li>
           <li>Partenaires intégrés (par exemple coachs ou thérapeutes) lorsque vous utilisez ces services.</li>
           <li>Plateformes de paiement pour la gestion des transactions.</li>
@@ -157,7 +157,7 @@ export default function PrivacyPolicyMADO({ lastUpdated = "16 septembre 2025" })
         <p>Vous disposez des droits suivants :</p>
         <ul className="list-disc ml-5">
           <li>Accès, portabilité et rectification de vos données.</li>
-          <li>Effacement ("droit à l’oubli").</li>
+          <li>{"Effacement (droit à l’oubli)."}</li>
           <li>Restriction et opposition au traitement.</li>
           <li>Retrait du consentement (cookies, géoloc., etc.).</li>
           <li>Droit d’exporter vos données (via l’app ou sur demande).</li>
