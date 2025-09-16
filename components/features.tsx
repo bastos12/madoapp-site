@@ -19,17 +19,17 @@ export function Features() {
         </h2>
       </Header>
       <p className="max-w-lg text-sm text-neutral-600 text-center mx-auto mt-4 dark:text-neutral-200">
-        Un amour sincère et durable
+        {"La première application de rencontre qui vous accompagne réellement dans la construction d’une relation saine et durable."}
       </p>
-      <div className="mt-20  grid cols-1 md:grid-cols-5 gap-4 md:auto-rows-[25rem] max-w-7xl mx-auto [&>*:last-child]:md:row-span-2">
-        <Card className="flex flex-col justify-between md:col-span-3">
+      <div className="mt-20 grid grid-cols-1 md:grid-cols-5 gap-4 md:auto-rows-[25rem] max-w-7xl mx-auto [&>*:last-child]:md:row-span-2">
+        {/* <Card className="flex flex-col justify-between md:col-span-3">
           <CardSkeletonBody>
             <SkeletonOne />
           </CardSkeletonBody>
-          <CardContent className="h-40">
+          <CardContent className="h-52">
             <CardTitle>{"Un meilleur accompagnement."}</CardTitle>
             <CardDescription className={"sm:max-w-lg text-white dark:text-white/80"}>
-              {"Parce que la recherche de l'amour authentique est difficile, nous avons créer un algorithme pour ne plus que vous perdiez votre temps. Créer avec des professionnels."}
+              {"Chez MADO, on croit aux vraies rencontres, à celles qui se construisent sur la base du respect, de la confiance et d’une réelle compatibilité. Ici tout commence par des questions, celles qui comptent, celles qui permettent de savoir si vous êtes vraiment fait pour vous entendre. Moins de profils. Plus de compatibilité."}
             </CardDescription>
           </CardContent>
         </Card>
@@ -38,7 +38,7 @@ export function Features() {
           <CardContent className="h-40">
             <CardTitle>{"Vérification d'identité"}</CardTitle>
             <CardDescription className={"sm:max-w-lg text-white dark:text-white/80"}>
-              {"Vérification d'identité pour s'assurer que les personnes rencontrées sont authentiques."}
+              {"Afin de vous garantir la véracité des profils, nous vous demandons une vérification d’identité à l’inscription."}
             </CardDescription>
           </CardContent>
           <CardSkeletonBody>
@@ -46,7 +46,7 @@ export function Features() {
               <Lock className="w-10 h-10" />
             </div>
           </CardSkeletonBody>
-        </Card>
+        </Card> */}
 
         {/* <Card className="flex flex-col justify-between md:col-span-2">
           <CardContent className="h-40">
@@ -65,15 +65,16 @@ export function Features() {
         </Card> */} 
         <Card className="flex flex-col md:col-span-5">
           <CardContent className="flex-shrink-0">
-            <CardTitle>{"Stop aux swipes, bonjour le slow dating."}</CardTitle>
+            <CardTitle>{"MADO c’est plus qu’une application de rencontre, c’est une environnement bienveillant et sécurisé qui vous propose des profils de qualité et un accompagnement à chaque étape de votre parcours amoureux."}</CardTitle>
 
           </CardContent>
-          <CardSkeletonBody className="flex-1 min-h-[40rem]">
+          <CardSkeletonBody className="flex-1 min-h-[20rem] sm:min-h-[30rem] md:min-h-[40rem]">
             <div className="relative w-full h-full rounded-lg bg-neutral-100 mt-2 overflow-hidden">
               <Image
                 src="/vue_ensemble.png"
                 alt="Dashboard"
-                layout="fill"
+                fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 70vw"
                 className="object-cover"
               />
             </div>

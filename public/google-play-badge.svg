@@ -1,0 +1,38 @@
+<svg width="135" height="40" viewBox="0 0 135 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="135" height="40" rx="6" fill="black"/>
+  <defs>
+    <linearGradient id="a" x1="21.8" y1="33.29" x2="5.02" y2="16.51" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#00A0FF"/>
+      <stop offset=".007" stop-color="#00A1FF"/>
+      <stop offset=".26" stop-color="#00BEFF"/>
+      <stop offset=".512" stop-color="#00D2FF"/>
+      <stop offset=".76" stop-color="#00DFFF"/>
+      <stop offset="1" stop-color="#00E3FF"/>
+    </linearGradient>
+    <linearGradient id="b" x1="33.834" y1="21.999" x2="9.637" y2="21.999" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#FFE000"/>
+      <stop offset=".409" stop-color="#FFBD00"/>
+      <stop offset=".775" stop-color="#FFA500"/>
+      <stop offset="1" stop-color="#FF9C00"/>
+    </linearGradient>
+    <linearGradient id="c" x1="24.827" y1="22.296" x2="2.069" y2="45.054" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#FF3A44"/>
+      <stop offset="1" stop-color="#C31162"/>
+    </linearGradient>
+    <linearGradient id="d" x1="7.297" y1=".176" x2="17.46" y2="10.339" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#32A071"/>
+      <stop offset=".069" stop-color="#2DA771"/>
+      <stop offset=".476" stop-color="#15CF74"/>
+      <stop offset=".801" stop-color="#06E775"/>
+      <stop offset="1" stop-color="#00F076"/>
+    </linearGradient>
+  </defs>
+  <g transform="translate(67.5, 20)">
+    <path d="M-47.065 -12.599c-.42.46-.677 1.18-.677 2.11v20.98c0 .93.257 1.65.677 2.11L-46.91 12.44 -35.73 1.26v-.52L-46.91 -10.44l-.155.16-.001-.319z" fill="url(#d)"/>
+    <path d="M-32.06 4.96l-3.67-3.7v-.52l3.67-3.7.082.048 4.35 2.47c1.24.7 1.24 1.86 0 2.56l-4.35 2.47-.082.047z" fill="url(#b)"/>
+    <path d="M-31.98 4.912L-35.73 1.16 -47.065 12.495c.41.43 1.08.48 1.89.03l13.195-7.613z" fill="url(#c)"/>
+    <path d="M-31.98 -2.912L-45.175 -10.525c-.81-.45-1.48-.4-1.89.03L-35.73 0.84l3.75-3.752z" fill="url(#a)"/>
+    <text x="-15" y="-7" fill="white" font-family="Arial, sans-serif" font-size="8" font-weight="400" text-anchor="start" dominant-baseline="central">Disponible sur</text>
+    <text x="-15" y="6" fill="white" font-family="Arial, sans-serif" font-size="12" font-weight="600" text-anchor="start" dominant-baseline="central">Google Play</text>
+  </g>
+</svg>

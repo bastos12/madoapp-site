@@ -30,7 +30,7 @@ export function Hero() {
       ref={parentRef}
       className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden px-4 py-20 md:px-8 md:py-40 dark:bg-[#016145]"
     >
-      <BackgroundGrids />
+      {/* <BackgroundGrids /> */}
       {/*<CollisionMechanism*/}
       {/*  beamOptions={{*/}
       {/*    initialX: -400,*/}
@@ -116,25 +116,25 @@ export function Hero() {
         transition={{ duration: 0.2, delay: 0.7 }}
         className="mt-8 mb-10 sm:mb-20 flex w-full flex-col items-center justify-center gap-4 px-8 sm:flex-row"
       >
-        <Button
-          as={Link}
-          href="/#"
-          variant="primary"
-          disabled={true}
-          className="hidden md:block w-40 text-center"
-        >
-          Apple store
-        </Button>
+        <Link href="/#" className="block">
+          <Image
+            src="/app-store-badge.svg"
+            alt="Télécharger sur l'App Store"
+            width={135}
+            height={40}
+            className="hover:opacity-80 transition-opacity cursor-pointer"
+          />
+        </Link>
 
-         <Button
-          as={Link}
-          href={"/#"}
-          variant="primary"
-          disabled={true}
-          className="hidden md:block w-40"
-        >
-          Google play
-        </Button>
+        <Link href="/#" className="block">
+          <Image
+            src="/google-play-badge.svg"
+            alt="Disponible sur Google Play"
+            width={135}
+            height={40}
+            className="hover:opacity-80 transition-opacity cursor-pointer"
+          />
+        </Link>
 
         {/*<Button*/}
         {/*  data-cal-namespace={calOptions.namespace}*/}
