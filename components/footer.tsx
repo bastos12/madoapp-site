@@ -58,10 +58,14 @@ export function Footer() {
       title: "Conditions générales de vente",
       href: "/privacy/cgv",
     },
-    {
-      title: "Droit des mineurs",
-      href: "/privacy/safe",
-    },
+      {
+        title: "Droit des mineurs",
+        href: "/privacy/safe",
+      },
+      {
+        title: "Support",
+        href: "/support",
+      },
   ];
 
   const signups = [
