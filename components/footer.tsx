@@ -163,10 +163,10 @@ export function Footer() {
               Téléchargement
             </p>
             <div className="flex justify-center space-x-4">
-              <Link href="/#" className="transition-colors hover:text-text-neutral-800 dark:text-zinc-800 hover:cursor-pointer">
+              <Link href="https://apps.apple.com/fr/app/mado-app-de-rencontre/id6747421904" className="transition-colors hover:text-text-neutral-800 dark:text-zinc-800 hover:cursor-pointer">
                 <Image src="/app-store-badge.svg" alt="App Store" width={135} height={40} />
               </Link>
-              <Link href="/#" className="transition-colors hover:text-text-neutral-800 dark:text-zinc-800 hover:cursor-pointer">
+              <Link href="https://play.google.com/store/apps/details?id=com.madoapp.mado" className="transition-colors hover:text-text-neutral-800 dark:text-zinc-800 hover:cursor-pointer">
                 <Image src="/google-play-badge.svg" alt="Google Play" width={135} height={40} />
               </Link>
             </div>

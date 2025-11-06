@@ -116,7 +116,7 @@ export function Hero() {
         transition={{ duration: 0.2, delay: 0.7 }}
         className="mt-8 mb-10 sm:mb-20 flex w-full flex-col items-center justify-center gap-4 px-8 sm:flex-row"
       >
-        <Link href="/#" className="block">
+        <Link href="https://apps.apple.com/fr/app/mado-app-de-rencontre/id6747421904" className="block">
           <Image
             src="/app-store-badge.svg"
             alt="Télécharger sur l'App Store"
@@ -126,7 +126,7 @@ export function Hero() {
           />
         </Link>
 
-        <Link href="/#" className="block">
+        <Link href="https://play.google.com/store/apps/details?id=com.madoapp.mado" className="block">
           <Image
             src="/google-play-badge.svg"
             alt="Disponible sur Google Play"
