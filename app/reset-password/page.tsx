@@ -107,8 +107,7 @@ export default function ResetPasswordPage() {
         headers: {
           'Content-Type': 'application/json',
           'Authorization': '',
-          'Accept': 'application/json',
-          'Referer': "https://madoapp.fr"
+          'Accept': 'application/json'
         }
       };
       const body = JSON.stringify({
@@ -117,7 +116,7 @@ export default function ResetPasswordPage() {
           re_new_password: confirmPassword
       });
       const response = await axios.post(
-        `${API_URL}/users/reset_password_confirm/`, body, config
+        `${API_URL}users/reset_password_confirm/`, body, config
       );
 
       if (response.status === 204) {
