@@ -95,7 +95,7 @@ export default function ResetPasswordPage() {
     try {
       // Appel à votre API custom pour confirmer la réinitialisation
       const response = await axios.post(
-        `${API_URL}/comptes/user/reset_password_confirm`,
+        `${API_URL}/users/reset_password_confirm`,
         {
           token: token,
           new_password: password,
