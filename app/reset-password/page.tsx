@@ -5,34 +5,36 @@ import axios from 'axios';
 
 /**
  * Composant de réinitialisation de mot de passe pour le site web madoapp.fr
- *
- * À utiliser sur votre site web Next.js/React
- *
- * Installation requise :
- * npm install axios
- *
- * Usage dans votre page /reset-password :
- * - Récupérer le token depuis l'URL (query params)
- * - Passer le token à ce composant
- * - Ou laisser le composant récupérer automatiquement le token de l'URL
+ * Compatible avec l'API Djoser
  */
 
-// Configuration de l'API - MODIFIER SELON VOTRE ENVIRONNEMENT
-const API_URL = 'https://production-mado-9623f3b9c678.herokuapp.com/'; // Remplacez par votre URL d'API en production
+const API_URL = 'https://production-mado-9623f3b9c678.herokuapp.com';
 
 export default function ResetPasswordPage() {
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [message, setMessage] = useState<{ type: 'success' | 'error'; text: string } | null>(null);
+  const [uid, setUid] = useState<string>('');
   const [token, setToken] = useState<string>('');
 
   useEffect(() => {
-    // Récupérer le token de l'URL
+    // Récupérer le token de l'URL (format: uid-token)
     const urlParams = new URLSearchParams(window.location.search);
     const urlToken = urlParams.get('token');
+    
     if (urlToken) {
-      setToken(urlToken);
+      // Le token vient dans le format "uid-token" depuis l'email
+      const parts = urlToken.split('-');
+      if (parts.length === 2) {
+        setUid(parts[0]);
+        setToken(parts[1]);
+      } else {
+        setMessage({
+          type: 'error',
+          text: 'Le lien de réinitialisation est invalide. Veuillez vérifier le lien dans votre email.'
+        });
+      }
     } else {
       setMessage({
         type: 'error',
@@ -91,10 +93,10 @@ export default function ResetPasswordPage() {
       return;
     }
 
-    if (!token) {
+    if (!uid || !token) {
       setMessage({
         type: 'error',
-        text: 'Token manquant. Veuillez utiliser le lien dans votre email.'
+        text: 'Token manquant ou invalide. Veuillez utiliser le lien dans votre email.'
       });
       return;
     }
@@ -103,20 +105,20 @@ export default function ResetPasswordPage() {
 
     try {
       // Appel à l'API Djoser pour confirmer la réinitialisation
-      const config = {
-        headers: {
-          'Content-Type': 'application/json',
-          'Authorization': '',
-          'Accept': 'application/json'
-        }
-      };
-      const body = JSON.stringify({
-          token,
+      const response = await axios.post(
+        `${API_URL}/users/reset_password_confirm/`,
+        {
+          uid: uid,
+          token: token,
           new_password: password,
           re_new_password: confirmPassword
-      });
-      const response = await axios.post(
-        `${API_URL}auth/users/reset_password_confirm/`, body, config
+        },
+        {
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+          }
+        }
       );
 
       if (response.status === 204) {
@@ -131,7 +133,7 @@ export default function ResetPasswordPage() {
 
         // Optionnel : rediriger vers une page de succès après 3 secondes
         setTimeout(() => {
-          window.location.href = '/'; // ou vers votre page d'accueil
+          window.location.href = '/';
         }, 3000);
       }
     } catch (error: any) {
@@ -141,16 +143,20 @@ export default function ResetPasswordPage() {
 
       if (error.response) {
         if (error.response.status === 400) {
-          errorMessage = 'Le lien de réinitialisation est invalide ou a expiré. Veuillez demander un nouveau lien.';
-        } else if (error.response.data) {
-          // Extraire les messages d'erreur de l'API
           const errors = error.response.data;
-          if (errors.token) {
-            errorMessage = 'Le lien de réinitialisation est invalide ou a expiré.';
+          
+          if (errors.token || errors.uid) {
+            errorMessage = 'Le lien de réinitialisation est invalide ou a expiré. Veuillez demander un nouveau lien.';
           } else if (errors.new_password) {
             errorMessage = Array.isArray(errors.new_password)
               ? errors.new_password.join(' ')
               : errors.new_password;
+          } else if (errors.non_field_errors) {
+            errorMessage = Array.isArray(errors.non_field_errors)
+              ? errors.non_field_errors.join(' ')
+              : errors.non_field_errors;
+          } else {
+            errorMessage = 'Le lien de réinitialisation est invalide ou a expiré.';
           }
         }
       }
@@ -176,8 +182,8 @@ export default function ResetPasswordPage() {
 
         {message && (
           <div className={`p-4 rounded-lg mb-6 text-sm leading-relaxed ${
-            message.type === 'success' 
-              ? 'bg-green-50 text-green-800 border border-green-200' 
+            message.type === 'success'
+              ? 'bg-green-50 text-green-800 border border-green-200'
               : 'bg-red-50 text-red-800 border border-red-200'
           }`}>
             {message.text}
@@ -233,8 +239,8 @@ export default function ResetPasswordPage() {
           <button
             type="submit"
             className={`w-full py-4 px-6 text-lg font-bold rounded-lg transition-all duration-200 ${
-              isLoading 
-                ? 'bg-[#F3CDE7] text-[#036147] opacity-60 cursor-not-allowed' 
+              isLoading
+                ? 'bg-[#F3CDE7] text-[#036147] opacity-60 cursor-not-allowed'
                 : 'bg-[#F3CDE7] text-[#036147] hover:bg-[#f0c4e1] hover:shadow-md'
             }`}
             disabled={isLoading}
@@ -247,7 +253,7 @@ export default function ResetPasswordPage() {
           <p className="text-sm text-gray-600 text-center">
             Vous rencontrez des problèmes ? Contactez notre support à{' '}
             <a href="mailto:support@madoapp.fr" className="text-[#036147] font-semibold hover:underline">
-              support@madoapp.fr
+              hello@madoapp.fr
             </a>
           </p>
         </div>
