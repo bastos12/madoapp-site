@@ -20,32 +20,26 @@ import axios from 'axios';
 // Configuration de l'API - MODIFIER SELON VOTRE ENVIRONNEMENT
 const API_URL = 'https://production-mado-9623f3b9c678.herokuapp.com/'; // Remplacez par votre URL d'API en production
 
-interface ResetPasswordWebProps {
-  token?: string; // Token optionnel passé en props
-}
-
-const ResetPasswordWeb: React.FC<ResetPasswordWebProps> = ({ token: tokenProp }) => {
+export default function ResetPasswordPage() {
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [message, setMessage] = useState<{ type: 'success' | 'error'; text: string } | null>(null);
-  const [token, setToken] = useState<string>(tokenProp || '');
+  const [token, setToken] = useState<string>('');
 
   useEffect(() => {
-    // Si le token n'est pas passé en props, le récupérer de l'URL
-    if (!tokenProp) {
-      const urlParams = new URLSearchParams(window.location.search);
-      const urlToken = urlParams.get('token');
-      if (urlToken) {
-        setToken(urlToken);
-      } else {
-        setMessage({
-          type: 'error',
-          text: 'Aucun token de réinitialisation trouvé. Veuillez vérifier le lien dans votre email.'
-        });
-      }
+    // Récupérer le token de l'URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const urlToken = urlParams.get('token');
+    if (urlToken) {
+      setToken(urlToken);
+    } else {
+      setMessage({
+        type: 'error',
+        text: 'Aucun token de réinitialisation trouvé. Veuillez vérifier le lien dans votre email.'
+      });
     }
-  }, [tokenProp]);
+  }, []);
 
   const validatePassword = (pwd: string): string | null => {
     if (pwd.length < 8) {
@@ -261,8 +255,5 @@ const ResetPasswordWeb: React.FC<ResetPasswordWebProps> = ({ token: tokenProp })
       </div>
     </div>
   );
-};
-
-
-export default ResetPasswordWeb;
+}
 
