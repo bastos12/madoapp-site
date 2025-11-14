@@ -109,7 +109,7 @@ export default function ResetPasswordPage() {
         }
       );
 
-      if (response.status === 200) {
+      if (response.status === 204) {
         setMessage({
           type: 'success',
           text: 'Votre mot de passe a été réinitialisé avec succès ! Vous pouvez maintenant vous connecter avec votre nouveau mot de passe dans l\'application Mado.'
