@@ -5,7 +5,7 @@ import axios from 'axios';
 
 /**
  * Composant de réinitialisation de mot de passe pour le site web madoapp.fr
- * Compatible avec l'API Djoser
+ * Compatible avec l'endpoint custom /comptes/user/reset_password_confirm
  */
 
 const API_URL = 'https://production-mado-9623f3b9c678.herokuapp.com';
@@ -15,26 +15,15 @@ export default function ResetPasswordPage() {
   const [confirmPassword, setConfirmPassword] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [message, setMessage] = useState<{ type: 'success' | 'error'; text: string } | null>(null);
-  const [uid, setUid] = useState<string>('');
   const [token, setToken] = useState<string>('');
 
   useEffect(() => {
-    // Récupérer le token de l'URL (format: uid-token)
+    // Récupérer le token de l'URL
     const urlParams = new URLSearchParams(window.location.search);
     const urlToken = urlParams.get('token');
     
     if (urlToken) {
-      // Le token vient dans le format "uid-token" depuis l'email
-      const parts = urlToken.split('-');
-      if (parts.length === 2) {
-        setUid(parts[0]);
-        setToken(parts[1]);
-      } else {
-        setMessage({
-          type: 'error',
-          text: 'Le lien de réinitialisation est invalide. Veuillez vérifier le lien dans votre email.'
-        });
-      }
+      setToken(urlToken);
     } else {
       setMessage({
         type: 'error',
@@ -93,10 +82,10 @@ export default function ResetPasswordPage() {
       return;
     }
 
-    if (!uid || !token) {
+    if (!token) {
       setMessage({
         type: 'error',
-        text: 'Token manquant ou invalide. Veuillez utiliser le lien dans votre email.'
+        text: 'Token manquant. Veuillez utiliser le lien dans votre email.'
       });
       return;
     }
@@ -104,11 +93,10 @@ export default function ResetPasswordPage() {
     setIsLoading(true);
 
     try {
-      // Appel à l'API Djoser pour confirmer la réinitialisation
+      // Appel à votre API custom pour confirmer la réinitialisation
       const response = await axios.post(
-        `${API_URL}/users/reset_password_confirm/`,
+        `${API_URL}/comptes/user/reset_password_confirm`,
         {
-          uid: uid,
           token: token,
           new_password: password,
           re_new_password: confirmPassword
@@ -121,7 +109,7 @@ export default function ResetPasswordPage() {
         }
       );
 
-      if (response.status === 204) {
+      if (response.status === 200) {
         setMessage({
           type: 'success',
           text: 'Votre mot de passe a été réinitialisé avec succès ! Vous pouvez maintenant vous connecter avec votre nouveau mot de passe dans l\'application Mado.'
@@ -145,18 +133,20 @@ export default function ResetPasswordPage() {
         if (error.response.status === 400) {
           const errors = error.response.data;
           
-          if (errors.token || errors.uid) {
-            errorMessage = 'Le lien de réinitialisation est invalide ou a expiré. Veuillez demander un nouveau lien.';
+          if (errors.detail) {
+            errorMessage = errors.detail;
+          } else if (errors.token) {
+            errorMessage = Array.isArray(errors.token)
+              ? errors.token.join(' ')
+              : errors.token;
           } else if (errors.new_password) {
             errorMessage = Array.isArray(errors.new_password)
               ? errors.new_password.join(' ')
               : errors.new_password;
-          } else if (errors.non_field_errors) {
-            errorMessage = Array.isArray(errors.non_field_errors)
-              ? errors.non_field_errors.join(' ')
-              : errors.non_field_errors;
-          } else {
-            errorMessage = 'Le lien de réinitialisation est invalide ou a expiré.';
+          } else if (errors.re_new_password) {
+            errorMessage = Array.isArray(errors.re_new_password)
+              ? errors.re_new_password.join(' ')
+              : errors.re_new_password;
           }
         }
       }
@@ -253,7 +243,7 @@ export default function ResetPasswordPage() {
           <p className="text-sm text-gray-600 text-center">
             Vous rencontrez des problèmes ? Contactez notre support à{' '}
             <a href="mailto:support@madoapp.fr" className="text-[#036147] font-semibold hover:underline">
-              hello@madoapp.fr
+              support@madoapp.fr
             </a>
           </p>
         </div>
@@ -261,4 +251,3 @@ export default function ResetPasswordPage() {
     </div>
   );
 }
-
