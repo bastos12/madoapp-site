@@ -108,7 +108,7 @@ export default function ResetPasswordPage() {
           'Content-Type': 'application/json',
           'Authorization': '',
           'Accept': 'application/json',
-          'Referer': API_URL
+          'Referer': "https://madoapp.fr"
         }
       };
       const body = JSON.stringify({
