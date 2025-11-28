@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import { Logo } from "./logo";
 
 export function Footer() {
   const pages = [
@@ -13,38 +12,19 @@ export function Footer() {
       title: "Fonctionnalités",
       href: "/#features",
     },
-    // {
-    //   title: "Prix",
-    //   href: "/#pricing",
-    // },
-    // {
-    //   title: "Témoignages",
-    //   href: "/#contact",
-    // },
-    // {
-    //   title: "Images",
-    //   href: "/#view",
-    // },
   ];
 
   const socials = [
-    // {
-    //   title: "Facebook",
-    //   href: "https://www.facebook.com/profile.php?id=61558150144865#",
-    // },
     {
       title: "Instagram",
       href: "https://www.instagram.com/mado_app",
     },
-    // {
-    //   title: "LinkedIn",
-    //   href: "https://www.linkedin.com/company/formafoot-formations/",
-    // },
-    // {
-    //   title: "Site internet",
-    //   href: "https://www.formafoot.fr",
-    // },
+    {
+      title: "Facebook",
+      href: "https://www.facebook.com/p/Mado-rencontrez-vous-61573696675480/",
+    },
   ];
+
   const legals = [
     {
       title: "Politique de confidentialité",
@@ -58,61 +38,45 @@ export function Footer() {
       title: "Conditions générales de vente",
       href: "/privacy/cgv",
     },
-      {
-        title: "Droit des mineurs",
-        href: "/privacy/safe",
-      },
-      {
-        title: "Support",
-        href: "/support",
-      },
+    {
+      title: "Droit des mineurs",
+      href: "/privacy/safe",
+    },
+    {
+      title: "Support",
+      href: "/support",
+    },
   ];
 
-  const signups = [
-    {
-      title: "Créer un compte",
-      href: "https://www.formafoot.fr/signup?saas=true",
-      target: "_blank",
-    },
-    {
-      title: "Connexion",
-      href: "https://app.formafoot.fr",
-      target: "_blank",
-    },
-    {
-      title: "Nous écrire",
-      href: "mailto:contact@formafoot.fr",
-    },
-  ];
   return (
-    <div className="border-t border-neutral-100 dark:border-white/[0.1] px-8 py-20 bg-white dark:bg-[#f7cbe5] w-full relative overflow-hidden">
-      <div className="max-w-7xl mx-auto text-sm text-neutral-500 flex sm:flex-row flex-col justify-between items-start  md:px-8">
-        <div>
-          <div className="mr-0 md:mr-4 md:flex mb-4 space-x-2 items-center">
-          <Image
-            src="/icon_app.png"
-            alt="logo"
-            width={30}
-            height={30}
-            className="rounded-full"
-          />
-            <span className="font-medium text-black dark:text-neutral-900">Mado</span>
+    <div className="border-t border-[#f5f0e8]/20 px-8 py-20 bg-[#016145] w-full relative overflow-hidden">
+      <div className="max-w-7xl mx-auto text-sm text-[#f5f0e8] flex sm:flex-row flex-col justify-between items-start md:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-5 gap-4 lg:gap-6 items-start mt-10 sm:mt-0 md:mt-0">
+        <div className="text-left">
+          <div className="flex mb-4 space-x-2 items-center">
+            <Image
+              src="/icon_app.png"
+              alt="logo"
+              width={30}
+              height={30}
+              className="rounded-full"
+            />
+            <span className="font-medium text-[#f5f0e8]">Mado</span>
           </div>
 
-          <div className="mt-2 lg:ml-2 text-neutral-900 dark:text-neutral-900">
+          <div className="mt-2 text-[#f5f0e8]/80">
             &copy; copyright Mado {new Date().getFullYear()}. Tout droit réservé.
           </div>
         </div>
-        <div className="grid grid-cols-1 lg:grid-cols-4 gap-10 items-start mt-10 sm:mt-0 md:mt-0">
           <div className="flex justify-center space-y-4 flex-col w-full">
-            <p className="transition-colors hover:text-text-neutral-800 text-neutral-600 dark:text-neutral-900 font-bold">
+            <p className="text-[#f5f0e8] font-bold">
               Navigation
             </p>
-            <ul className="transition-colors hover:text-text-neutral-800 text-neutral-600 dark:text-neutral-300 list-none space-y-4">
+            <ul className="list-none space-y-4">
               {pages.map((page, idx) => (
                 <li key={"pages" + idx} className="list-none">
                   <Link
-                    className="transition-colors hover:text-text-neutral-800 dark:text-zinc-800"
+                    className="text-[#f5f0e8]/80 hover:text-[#f5f0e8] transition-colors"
                     href={page.href}
                   >
                     {page.title}
@@ -123,14 +87,14 @@ export function Footer() {
           </div>
 
           <div className="flex justify-center space-y-4 flex-col">
-            <p className="transition-colors hover:text-text-neutral-800 text-neutral-600 dark:text-neutral-900 font-bold">
+            <p className="text-[#f5f0e8] font-bold">
               Réseaux sociaux
             </p>
-            <ul className="transition-colors hover:text-text-neutral-800 text-neutral-600 dark:text-neutral-900 list-none space-y-4">
+            <ul className="list-none space-y-4">
               {socials.map((social, idx) => (
                 <li key={"social" + idx} className="list-none">
                   <Link
-                    className="transition-colors hover:text-text-neutral-800 dark:text-zinc-800"
+                    className="text-[#f5f0e8]/80 hover:text-[#f5f0e8] transition-colors"
                     href={social.href}
                     target="_blank"
                   >
@@ -142,14 +106,14 @@ export function Footer() {
           </div>
 
           <div className="flex justify-center space-y-4 flex-col">
-            <p className="transition-colors hover:text-text-neutral-800 text-neutral-600 dark:text-neutral-900 font-bold">
+            <p className="text-[#f5f0e8] font-bold">
               Mentions légales
             </p>
-            <ul className="transition-colors hover:text-text-neutral-800 text-neutral-600 dark:text-neutral-900 list-none space-y-4">
+            <ul className="list-none space-y-4">
               {legals.map((legal, idx) => (
                 <li key={"legal" + idx} className="list-none">
                   <Link
-                    className="transition-colors hover:text-text-neutral-800 dark:text-zinc-800 hover:cursor-pointer"
+                    className="text-[#f5f0e8]/80 hover:text-[#f5f0e8] transition-colors"
                     href={legal.href}
                   >
                     {legal.title}
@@ -158,37 +122,20 @@ export function Footer() {
               ))}
             </ul>
           </div>
+
           <div className="flex justify-center space-y-4 flex-col">
-            <p className="transition-colors hover:text-text-neutral-800 text-neutral-600 dark:text-neutral-900 font-bold">
+            <p className="text-[#f5f0e8] font-bold">
               Téléchargement
             </p>
-            <div className="flex justify-center space-x-4">
-              <Link href="https://apps.apple.com/fr/app/mado-app-de-rencontre/id6747421904" className="transition-colors hover:text-text-neutral-800 dark:text-zinc-800 hover:cursor-pointer">
-                <Image src="/app-store-badge.svg" alt="App Store" width={135} height={40} />
+            <div className="flex flex-row gap-3 lg:gap-5">
+              <Link href="https://apps.apple.com/fr/app/mado-app-de-rencontre/id6747421904" className="hover:opacity-80 transition-opacity">
+                <Image src="/hero/app-store.png" alt="App Store" width={280} height={84} className="h-10 sm:h-12 lg:h-20 w-auto" />
               </Link>
-              <Link href="https://play.google.com/store/apps/details?id=com.madoapp.mado" className="transition-colors hover:text-text-neutral-800 dark:text-zinc-800 hover:cursor-pointer">
-                <Image src="/google-play-badge.svg" alt="Google Play" width={135} height={40} />
+              <Link href="https://play.google.com/store/apps/details?id=com.madoapp.mado" className="hover:opacity-80 transition-opacity">
+                <Image src="/hero/play-store.png" alt="Google Play" width={280} height={84} className="h-10 sm:h-12 lg:h-20 w-auto" />
               </Link>
             </div>
           </div>
-          {/* <div className="flex justify-center space-y-4 flex-col">
-            <p className="transition-colors hover:text-text-neutral-800 text-neutral-600 dark:text-neutral-900 font-bold">
-              Comptes
-            </p>
-            <ul className="transition-colors hover:text-text-neutral-800 text-neutral-600 dark:text-neutral-300 list-none space-y-4">
-              {signups.map((auth, idx) => (
-                <li key={"auth" + idx} className="list-none">
-                  <Link
-                    className="transition-colors hover:text-text-neutral-800 dark:text-zinc-800"
-                    href={auth.href}
-                    target={auth.target}
-                  >
-                    {auth.title}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div> */}
         </div>
       </div>
     </div>
