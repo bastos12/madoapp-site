@@ -49,7 +49,7 @@ export function TeamSection() {
           NOTRE ÉQUIPE
         </motion.h2>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 items-stretch">
           {teamMembers.map((member, idx) => (
             <motion.div
               key={idx}
@@ -57,7 +57,7 @@ export function TeamSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: idx * 0.1 }}
-              className="flex flex-col"
+              className="flex flex-col h-full"
             >
               {/* Photo */}
               <div className="aspect-square overflow-hidden">
@@ -72,7 +72,7 @@ export function TeamSection() {
 
               {/* Texte dans un encadré coloré */}
               <div
-                className={`p-3 md:p-4 ${
+                className={`p-3 md:p-4 flex-1 ${
                   member.color === "green"
                     ? "bg-[#046147] text-white"
                     : "bg-[#f2cce5] text-[#046147]"

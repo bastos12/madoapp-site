@@ -12,6 +12,10 @@ export function Footer() {
       title: "Fonctionnalités",
       href: "/#features",
     },
+    {
+      title: "FAQ",
+      href: "/faq",
+    },
   ];
 
   const socials = [
