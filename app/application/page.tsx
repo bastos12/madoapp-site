@@ -21,23 +21,23 @@ export default function ApplicationPage() {
       </p>
 
       {/* Boutons d'app */}
-      <div className="flex flex-col md:flex-row gap-6 mb-12">
-        <Link href="https://apps.apple.com/fr/app/mado-app-de-rencontre/id6747421904">
+      <div className="flex flex-row gap-4 mb-12 w-full max-w-lg md:max-w-none md:w-auto items-center px-2">
+        <Link href="https://apps.apple.com/fr/app/mado-app-de-rencontre/id6747421904" className="w-1/2 md:w-auto">
           <Image
             src="/hero/app-store.png"
             alt="Disponible sur l'App Store"
-            width={350}
-            height={105}
-            className="h-20 md:h-24 w-auto hover:opacity-80 transition-opacity"
+            width={400}
+            height={120}
+            className="h-auto w-full md:w-auto md:h-24 hover:opacity-80 transition-opacity"
           />
         </Link>
-        <Link href="https://play.google.com/store/apps/details?id=com.madoapp.mado">
+        <Link href="https://play.google.com/store/apps/details?id=com.madoapp.mado" className="w-1/2 md:w-auto">
           <Image
             src="/hero/play-store.png"
             alt="Disponible sur Google Play"
-            width={350}
-            height={105}
-            className="h-20 md:h-24 w-auto hover:opacity-80 transition-opacity"
+            width={400}
+            height={120}
+            className="h-auto w-full md:w-auto md:h-24 hover:opacity-80 transition-opacity"
           />
         </Link>
       </div>

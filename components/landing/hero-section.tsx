@@ -64,9 +64,9 @@ export function HeroSection() {
           <Image
             src="/hero/logo-rose.png"
             alt="Mado logo"
-            width={150}
+            width={200}
             height={50}
-            className="h-10 w-auto"
+            className="h-14 w-auto"
           />
         </Link>
       </div>
@@ -77,18 +77,18 @@ export function HeroSection() {
           <Image
             src="/hero/app-store.png"
             alt="Disponible sur l'App Store"
-            width={250}
-            height={75}
-            className="h-14 w-auto hover:opacity-80 transition-opacity"
+            width={400}
+            height={120}
+            className="h-28 w-auto hover:opacity-80 transition-opacity"
           />
         </Link>
         <Link href="https://play.google.com/store/apps/details?id=com.madoapp.mado">
           <Image
             src="/hero/play-store.png"
             alt="Disponible sur Google Play"
-            width={250}
-            height={75}
-            className="h-14 w-auto hover:opacity-80 transition-opacity"
+            width={400}
+            height={120}
+            className="h-28 w-auto hover:opacity-80 transition-opacity"
           />
         </Link>
       </div>

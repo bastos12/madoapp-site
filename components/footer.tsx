@@ -127,12 +127,12 @@ export function Footer() {
             <p className="text-[#f5f0e8] font-bold">
               Téléchargement
             </p>
-            <div className="flex flex-row gap-3 lg:gap-5">
-              <Link href="https://apps.apple.com/fr/app/mado-app-de-rencontre/id6747421904" className="hover:opacity-80 transition-opacity">
-                <Image src="/hero/app-store.png" alt="App Store" width={280} height={84} className="h-10 sm:h-12 lg:h-20 w-auto" />
+            <div className="flex flex-row gap-3 lg:gap-5 w-full lg:w-auto">
+              <Link href="https://apps.apple.com/fr/app/mado-app-de-rencontre/id6747421904" className="hover:opacity-80 transition-opacity w-1/2 lg:w-auto">
+                <Image src="/hero/app-store.png" alt="App Store" width={280} height={84} className="h-auto w-full lg:w-auto lg:h-20" />
               </Link>
-              <Link href="https://play.google.com/store/apps/details?id=com.madoapp.mado" className="hover:opacity-80 transition-opacity">
-                <Image src="/hero/play-store.png" alt="Google Play" width={280} height={84} className="h-10 sm:h-12 lg:h-20 w-auto" />
+              <Link href="https://play.google.com/store/apps/details?id=com.madoapp.mado" className="hover:opacity-80 transition-opacity w-1/2 lg:w-auto">
+                <Image src="/hero/play-store.png" alt="Google Play" width={280} height={84} className="h-auto w-full lg:w-auto lg:h-20" />
               </Link>
             </div>
           </div>
