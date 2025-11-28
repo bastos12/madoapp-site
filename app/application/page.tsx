@@ -17,7 +17,7 @@ export default function ApplicationPage() {
 
       {/* Texte */}
       <p className="text-[#f6f3ed] text-center text-lg md:text-2xl font-medium max-w-xl mb-12 leading-relaxed">
-        L'app de rencontre pour celles et ceux qui veulent construire une relation saine et durable.
+        {"L'app de rencontre pour celles et ceux qui veulent construire une relation saine et durable."}
       </p>
 
       {/* Boutons d'app */}
