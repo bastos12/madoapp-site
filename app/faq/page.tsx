@@ -55,12 +55,31 @@ En bas de la page cliquez sur "supprimer mon compte".`,
     category: "TARIFS / ABONNEMENT",
     questions: [
       {
-        question: "Est-ce que l'application est payante ?",
-        answer: `Pour le moment l'application est 100% gratuite en phase "bêta".
-Les abonnements commenceront début 2026.`,
+        question: "À quoi ai-je accès gratuitement ?",
+        answer: `• Vous pouvez découvrir 1 profil compatible par jour.
+
+• Vous pouvez voir les profils qui vous likent.
+Si quelqu'un vous like, vous pouvez voir son profil et décider librement si vous souhaitez liker en retour.
+
+• Vous pouvez « Enregistrer un profil » si vous souhaitez le garder de côté et revenir le voir plus tard.
+
+• Vous avez accès à une dizaine de contenus produits par nos thérapeutes partenaires.`,
       },
       {
-        question: "Pourquoi proposer un abonnement à terme ?",
+        question: 'À quoi donne accès l\'abonnement « Rencontre » ?',
+        answer: `• L'abonnement « Rencontre » permet de rendre visible jusqu'à 3 profils par jour.
+À noter : l'abonnement ne crée pas de profils supplémentaires. Sur MADO, les profils sont proposés uniquement selon la compatibilité : vos réponses au questionnaire, vos critères d'âge et de distance. S'il n'y a pas encore 3 profils compatibles nous préférons patienter que de proposer au hasard. Il ne s'agit pas d'un système de « boost » ou de mise en avant payante. MADO ne fonctionne pas sur un modèle de visibilité cachée.
+
+• Cet abonnement vous donne également accès à l'ensemble des contenus (audios / articles) produits par nos thérapeutes partenaires.`,
+      },
+      {
+        question: 'À quoi donne accès l\'abonnement « Accompagnement » ?',
+        answer: `• Vous pouvez toujours découvrir 1 profil par jour si vous le souhaitez ou vous mettre en mode « fantôme » dans les paramètres si vous ne souhaitez pas / plus rencontrer de nouveaux profils.
+
+• Vous avez accès à l'ensemble des contenus (audios / articles) produits par nos thérapeutes partenaires.`,
+      },
+      {
+        question: "Pourquoi proposer une version payante ?",
         answer: `Pour :
 • Continuer à développer une application de haute qualité
 • Continuer de proposer des contenus exclusifs de thérapeutes partenaires
@@ -120,12 +139,67 @@ Toutes vos données sont alors effacées définitivement.`,
     ],
   },
   {
-    category: "UTILISATION DE L'APPLICATION",
+    category: "COMPRENDRE LES FONCTIONNALITÉS",
     questions: [
       {
-        question: 'Comment fonctionne le "match" sur MADO ?',
-        answer: `Si vous aimez un profil, vous envoyez un "J'aime".
-Si l'autre personne vous aime également, c'est un match, et une conversation peut commencer.`,
+        question: "Puis-je voir les personnes qui m'ont liké ?",
+        answer: `Oui. Quand une personne vous like, vous recevez une notification et le profil apparaît dans la section « Ils vous ont liké ».`,
+      },
+      {
+        question: 'À quoi sert la fonctionnalité « Enregistrer » ?',
+        answer: `Vous pouvez « Enregistrer un profil » si vous souhaitez le garder de côté et revenir le voir plus tard.`,
+      },
+      {
+        question: 'À quoi sert la section « Vous les avez liké » ?',
+        answer: `• Cette section regroupe les profils que vous avez likés.
+
+• Si la personne apparaît toujours dedans c'est qu'elle n'a pas encore liké en retour ou « refusé » votre profil.
+
+• Si la personne n'apparaît plus c'est qu'elle ne vous a pas liké en retour.
+
+• Si la personne vous like en retour, un match se crée et une conversation s'ouvre dans la messagerie.`,
+      },
+      {
+        question: "Est-ce que nous apparaissons le même jour dans la sélection de l'un et de l'autre ?",
+        answer: `Pas forcément.
+Lorsque vous voyez un profil, cela signifie que la personne est compatible avec vous selon vos réponses et vos critères.
+
+En revanche, cela ne veut pas dire que vous apparaîtrez chez elle le même jour.
+
+Pourquoi ?
+
+Parce que de son côté, l'ordre des profils proposés dépend aussi de :
+• Ses propres réponses au questionnaire
+• Ses critères d'âge et de distance
+• Le niveau de compatibilité qu'elle obtient avec les autres profils
+
+Si ce jour-là, elle a des profils plus compatibles selon ses critères, ils peuvent passer en priorité.
+
+En revanche, si vous likez son profil, elle recevra bien une notification et verra votre profil en plus de ses 3 profils du jour.`,
+      },
+      {
+        question: "Quand puis-je discuter avec quelqu'un ?",
+        answer: `La conversation s'ouvre uniquement lorsqu'il y a un match. Un match se crée lorsque les deux profils se likent mutuellement.`,
+      },
+      {
+        question: "Comment sont choisis les profils proposés ?",
+        answer: `Les profils sont proposés selon :
+• Vos réponses au questionnaire
+• Vos critères d'âge et de distance
+
+Il n'y a aucun algorithme caché, ni de système payant qui augmente artificiellement la visibilité.
+MADO ne bloque pas les profils pour inciter à payer. Les propositions sont uniquement basées sur la compatibilité.`,
+      },
+      {
+        question: "Pourquoi seulement 3 profils par jour ?",
+        answer: `MADO est basé sur le slow dating.
+
+Nous privilégions :
+• La cohérence
+• La qualité
+• Le temps de réflexion
+
+Plutôt que la quantité et le swipe sans fin.`,
       },
       {
         question: "Puis-je modifier mes critères ?",
@@ -138,13 +212,7 @@ Vous pouvez également modifier vos réponses au questionnaire dans l'onglet "Pr
         answer: `Oui, vous pouvez supprimer votre compte en 2 clics depuis les paramètres.`,
       },
       {
-        question: "Comment sont choisis mes 3 profils du jour ?",
-        answer: `Chaque jour à 18h, vous recevez 3 profils compatibles selon vos critères et vos réponses au questionnaire.
-
-L'objectif : limiter la surconsommation et faciliter les vraies rencontres.`,
-      },
-      {
-        question: "Pourquoi je ne reçois pas toujours 3 profils ?",
+        question: "Pourquoi je ne reçois pas toujours 3 profils par jour ?",
         answer: `Il arrive que dans votre zone ou tranche d'âge, le nombre de profils compatibles soit encore limité.
 
 MADO étant en phase de lancement, notre communauté grandit chaque jour — merci de votre patience !`,
