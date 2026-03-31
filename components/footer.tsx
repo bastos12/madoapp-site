@@ -1,6 +1,9 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import { TrackedLink } from "@/components/tracked-link";
 
 export function Footer() {
   const pages = [
@@ -22,10 +25,12 @@ export function Footer() {
     {
       title: "Instagram",
       href: "https://www.instagram.com/mado_app",
+      eventName: "Click_Social_Instagram",
     },
     {
       title: "Facebook",
       href: "https://www.facebook.com/p/Mado-rencontrez-vous-61573696675480/",
+      eventName: "Click_Social_Facebook",
     },
   ];
 
@@ -97,13 +102,15 @@ export function Footer() {
             <ul className="list-none space-y-4">
               {socials.map((social, idx) => (
                 <li key={"social" + idx} className="list-none">
-                  <Link
+                  <TrackedLink
                     className="text-[#f5f0e8]/80 hover:text-[#f5f0e8] transition-colors"
                     href={social.href}
                     target="_blank"
+                    eventName={social.eventName}
+                    eventProps={{ source: "footer", medium: "web", campaign: "site_mado" }}
                   >
                     {social.title}
-                  </Link>
+                  </TrackedLink>
                 </li>
               ))}
             </ul>
@@ -132,12 +139,22 @@ export function Footer() {
               Téléchargement
             </p>
             <div className="flex flex-row gap-3 lg:gap-5 w-full lg:w-auto">
-              <Link href="https://apps.apple.com/fr/app/mado-app-de-rencontre/id6747421904" className="hover:opacity-80 transition-opacity w-1/2 lg:w-auto">
+              <TrackedLink
+                href="https://apps.apple.com/fr/app/mado-app-de-rencontre/id6747421904"
+                className="hover:opacity-80 transition-opacity w-1/2 lg:w-auto"
+                eventName="Download_App_Store"
+                eventProps={{ source: "footer", medium: "web", campaign: "site_mado" }}
+              >
                 <Image src="/hero/app-store.png" alt="App Store" width={280} height={84} className="h-auto w-full lg:w-auto lg:h-20" />
-              </Link>
-              <Link href="https://play.google.com/store/apps/details?id=com.madoapp.mado" className="hover:opacity-80 transition-opacity w-1/2 lg:w-auto">
+              </TrackedLink>
+              <TrackedLink
+                href="https://play.google.com/store/apps/details?id=com.madoapp.mado"
+                className="hover:opacity-80 transition-opacity w-1/2 lg:w-auto"
+                eventName="Download_Google_Play"
+                eventProps={{ source: "footer", medium: "web", campaign: "site_mado" }}
+              >
                 <Image src="/hero/play-store.png" alt="Google Play" width={280} height={84} className="h-auto w-full lg:w-auto lg:h-20" />
-              </Link>
+              </TrackedLink>
             </div>
           </div>
         </div>

@@ -4,6 +4,7 @@ import "./globals.css";
 import { cn } from "@/lib/utils";
 import { Footer } from "@/components/footer";
 import { ThemeProvider } from "@/context/providers";
+import PlausibleProvider from "next-plausible";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -20,6 +21,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="fr">
+      <head>
+        <PlausibleProvider
+          domain="madoapp.fr"
+          scriptProps={{
+            src: "https://plausible.io/js/pa-QmRiRQCKN0IxmXOkO4IHd.js",
+          }}
+        />
+      </head>
       <body
         className={cn("antialiased", inter.className)}
       >

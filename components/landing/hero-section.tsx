@@ -4,6 +4,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
+import { TrackedLink } from "@/components/tracked-link";
 
 export function HeroSection() {
   return (
@@ -37,7 +38,11 @@ export function HeroSection() {
 
         {/* Boutons téléchargement à droite */}
         <div className="flex items-center space-x-5">
-          <Link href="https://apps.apple.com/fr/app/mado-app-de-rencontre/id6747421904">
+          <TrackedLink
+            href="https://apps.apple.com/fr/app/mado-app-de-rencontre/id6747421904"
+            eventName="Download_App_Store"
+            eventProps={{ source: "hero", medium: "web", campaign: "site_mado" }}
+          >
             <Image
               src="/hero/app-store.png"
               alt="Disponible sur l'App Store"
@@ -45,8 +50,12 @@ export function HeroSection() {
               height={84}
               className="h-24 w-auto hover:opacity-80 transition-opacity"
             />
-          </Link>
-          <Link href="https://play.google.com/store/apps/details?id=com.madoapp.mado">
+          </TrackedLink>
+          <TrackedLink
+            href="https://play.google.com/store/apps/details?id=com.madoapp.mado"
+            eventName="Download_Google_Play"
+            eventProps={{ source: "hero", medium: "web", campaign: "site_mado" }}
+          >
             <Image
               src="/hero/play-store.png"
               alt="Disponible sur Google Play"
@@ -54,7 +63,7 @@ export function HeroSection() {
               height={84}
               className="h-24 w-auto hover:opacity-80 transition-opacity"
             />
-          </Link>
+          </TrackedLink>
         </div>
       </header>
 
@@ -73,7 +82,11 @@ export function HeroSection() {
 
       {/* Mobile : Boutons téléchargement au centre */}
       <div className="md:hidden relative z-20 flex flex-row items-center justify-center flex-1 gap-3 px-4 py-0 lg:py-6">
-        <Link href="https://apps.apple.com/fr/app/mado-app-de-rencontre/id6747421904">
+        <TrackedLink
+          href="https://apps.apple.com/fr/app/mado-app-de-rencontre/id6747421904"
+          eventName="Download_App_Store"
+          eventProps={{ source: "hero_mobile", medium: "web", campaign: "site_mado" }}
+        >
           <Image
             src="/hero/app-store.png"
             alt="Disponible sur l'App Store"
@@ -81,8 +94,12 @@ export function HeroSection() {
             height={120}
             className="h-28 w-auto hover:opacity-80 transition-opacity"
           />
-        </Link>
-        <Link href="https://play.google.com/store/apps/details?id=com.madoapp.mado">
+        </TrackedLink>
+        <TrackedLink
+          href="https://play.google.com/store/apps/details?id=com.madoapp.mado"
+          eventName="Download_Google_Play"
+          eventProps={{ source: "hero_mobile", medium: "web", campaign: "site_mado" }}
+        >
           <Image
             src="/hero/play-store.png"
             alt="Disponible sur Google Play"
@@ -90,7 +107,7 @@ export function HeroSection() {
             height={120}
             className="h-28 w-auto hover:opacity-80 transition-opacity"
           />
-        </Link>
+        </TrackedLink>
       </div>
 
       {/* Texte en bas à gauche */}
