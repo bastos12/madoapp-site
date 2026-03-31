@@ -1,8 +1,13 @@
 "use client";
 
 import Link from "next/link";
-import { usePlausible } from "next-plausible";
 import React from "react";
+
+declare global {
+  interface Window {
+    plausible?: (event: string, options?: { props?: Record<string, string> }) => void;
+  }
+}
 
 type TrackedLinkProps = React.ComponentProps<typeof Link> & {
   eventName: string;
@@ -16,10 +21,8 @@ export function TrackedLink({
   children,
   ...props
 }: TrackedLinkProps) {
-  const plausible = usePlausible();
-
   const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    plausible(eventName, { props: eventProps });
+    window.plausible?.(eventName, { props: eventProps });
     onClick?.(e);
   };
 
