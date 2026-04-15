@@ -2,9 +2,18 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { useEffect } from "react";
 import { TrackedLink } from "@/components/tracked-link";
 
 export default function ApplicationPage() {
+  useEffect(() => {
+    window.fbq?.("trackCustom", "ViewApplicationPage", {
+      source: "application_page",
+      medium: "web",
+      campaign: "site_mado",
+    });
+  }, []);
+
   return (
     <div className="min-h-screen bg-[#046147] flex flex-col items-center justify-center px-6 py-12">
       {/* Logo Mado rose */}
