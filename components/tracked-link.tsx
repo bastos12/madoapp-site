@@ -13,18 +13,20 @@ declare global {
 type TrackedLinkProps = React.ComponentProps<typeof Link> & {
   eventName: string;
   eventProps?: Record<string, string>;
+  metaEventName?: string;
 };
 
 export function TrackedLink({
   eventName,
   eventProps,
+  metaEventName,
   onClick,
   children,
   ...props
 }: TrackedLinkProps) {
   const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
     window.plausible?.(eventName, { props: eventProps });
-    window.fbq?.("trackCustom", eventName, eventProps);
+    window.fbq?.("trackCustom", metaEventName ?? eventName, eventProps);
     onClick?.(e);
   };
 

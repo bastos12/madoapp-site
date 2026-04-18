@@ -38,7 +38,7 @@ export default function ApplicationPage() {
           href="https://apps.apple.com/fr/app/mado-app-de-rencontre/id6747421904"
           className="w-1/2 md:w-auto"
           eventName="Download_App_Store"
-          eventProps={{ source: "application_page", medium: "web", campaign: "site_mado" }}
+          eventProps={{ source: "application_page", medium: "web", campaign: "site_mado", store: "app_store" }}
         >
           <Image
             src="/hero/app-store.png"
@@ -52,7 +52,8 @@ export default function ApplicationPage() {
           href="https://play.google.com/store/apps/details?id=com.madoapp.mado"
           className="w-1/2 md:w-auto"
           eventName="Download_Google_Play"
-          eventProps={{ source: "application_page", medium: "web", campaign: "site_mado" }}
+          metaEventName="Download_App_Store"
+          eventProps={{ source: "application_page", medium: "web", campaign: "site_mado", store: "play_store" }}
         >
           <Image
             src="/hero/play-store.png"
